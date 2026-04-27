@@ -68,5 +68,5 @@ This will deploy BOTH the frontend dashboard and the API on the same URL!
 
 ## API Documentation
 
-- **Production App & API**: `https://your-app-name.onrender.com`
-- **API Status Check**: `https://your-app-name.onrender.com/api/status`
+- **Production App & API**: [https://water-billing-system-1-tk34.onrender.com](https://water-billing-system-1-tk34.onrender.com)
+- **API Status Check**: [https://water-billing-system-1-tk34.onrender.com/api/status](https://water-billing-system-1-tk34.onrender.com/api/status)
