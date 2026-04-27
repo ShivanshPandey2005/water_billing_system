@@ -1,0 +1,15 @@
+{
+  "name": "water-billing-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "api-gateway"
+  ],
+  "scripts": {
+    "start:gateway": "cd api-gateway && npm run dev",
+    "start:frontend": "cd frontend && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "deploy:prep": "npm run build:frontend"
+  }
+}

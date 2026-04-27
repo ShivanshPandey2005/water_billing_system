@@ -47,7 +47,28 @@ npm start
 - **Role-based Access**: Separate interfaces for Society Admins and Residents.
 - **Invoice Management**: Detailed bill breakdown and history.
 
+## Deployment
+
+### 1. Frontend (Vercel)
+- Connect your GitHub repository to [Vercel](https://vercel.com/).
+- Set the **Root Directory** to `frontend/`.
+- Set **Framework Preset** to `Angular`.
+- The `vercel.json` ensures that deep links work correctly.
+
+### 2. Backend (Render)
+- Connect your GitHub repository to [Render](https://render.com/).
+- Create a new **Web Service**.
+- Set **Root Directory** to `api-gateway/`.
+- Set **Build Command** to `npm install`.
+- Set **Start Command** to `npm start`.
+- Set the environment variable `NODE_ENV=production`.
+
+### 3. Database (Optional)
+- For the full version, create a free cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+- Set the `MONGODB_URI` environment variable on your Render service.
+- If no URI is provided, the gateway will default to **Mock Demo Mode**.
+
 ## API Documentation
 
-- **Node.js Gateway**: `http://localhost:3000/api`
-- **Billing Service Swagger**: `http://localhost:8080/swagger-ui.html`
+- **Production API**: `https://your-api-url.onrender.com/api`
+- **Frontend URL**: `https://your-app-url.vercel.app`
