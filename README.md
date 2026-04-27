@@ -51,9 +51,10 @@ npm start
 
 ### 1. Frontend (Vercel)
 - Connect your GitHub repository to [Vercel](https://vercel.com/).
-- Set the **Root Directory** to `frontend/`.
-- Set **Framework Preset** to `Angular`.
-- The `vercel.json` ensures that deep links work correctly.
+- **CRITICAL**: Set the **Output Directory** to `frontend/dist/browser`.
+- Set **Framework Preset** to `Other` or `Angular`.
+- If you set the **Root Directory** to `frontend/`, then set the **Output Directory** to just `dist/browser`.
+- The `vercel.json` inside the `frontend` folder handles the routing.
 
 ### 2. Backend (Render)
 - Connect your GitHub repository to [Render](https://render.com/).
