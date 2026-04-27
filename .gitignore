@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.angular/
+.vscode/
+.idea/
+*.log
+.env
+target/
+*.class
+.mvn/
+.gradle/
+build/
+.DS_Store
