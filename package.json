@@ -10,7 +10,8 @@
     "start:gateway": "node api-gateway/src/server.js",
     "start:frontend": "cd frontend && npm start",
     "build:frontend": "cd frontend && npm install && npx ng build --configuration production",
-    "build": "npm run build:frontend && rm -rf api-gateway/public && mkdir -p api-gateway/public && cp -r frontend/dist/browser/* api-gateway/public/",
+    "build:gateway": "cd api-gateway && npm install",
+    "build": "npm run build:gateway && npm run build:frontend && rm -rf api-gateway/public && mkdir -p api-gateway/public && cp -r frontend/dist/browser/* api-gateway/public/",
     "deploy:prep": "npm run build:frontend"
   }
 }
