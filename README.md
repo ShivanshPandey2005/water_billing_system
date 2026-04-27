@@ -56,20 +56,17 @@ npm start
 - If you set the **Root Directory** to `frontend/`, then set the **Output Directory** to just `dist/browser`.
 - The `vercel.json` inside the `frontend` folder handles the routing.
 
-### 2. Backend (Render)
+### Unified Deployment (Render)
 - Connect your GitHub repository to [Render](https://render.com/).
 - Create a new **Web Service**.
-- Set **Root Directory** to `api-gateway/`.
-- Set **Build Command** to `npm install`.
-- Set **Start Command** to `npm start`.
+- Leave the **Root Directory** empty (root of the repo).
+- Set **Build Command** to `npm run build`.
+- Set **Start Command** to `node api-gateway/src/server.js`.
 - Set the environment variable `NODE_ENV=production`.
 
-### 3. Database (Optional)
-- For the full version, create a free cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
-- Set the `MONGODB_URI` environment variable on your Render service.
-- If no URI is provided, the gateway will default to **Mock Demo Mode**.
+This will deploy BOTH the frontend dashboard and the API on the same URL!
 
 ## API Documentation
 
-- **Production API**: `https://your-api-url.onrender.com/api`
-- **Frontend URL**: `https://your-app-url.vercel.app`
+- **Production App & API**: `https://your-app-name.onrender.com`
+- **API Status Check**: `https://your-app-name.onrender.com/api/status`

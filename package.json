@@ -10,7 +10,7 @@
     "start:gateway": "cd api-gateway && npm run dev",
     "start:frontend": "cd frontend && npm start",
     "build:frontend": "cd frontend && npm run build",
-    "build": "npm run build:frontend && mkdir -p dist && cp -r frontend/dist/browser/* dist/",
+    "build": "npm run build:frontend && rm -rf api-gateway/public && mkdir -p api-gateway/public && cp -r frontend/dist/browser/* api-gateway/public/",
     "deploy:prep": "npm run build:frontend"
   }
 }
