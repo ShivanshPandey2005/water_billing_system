@@ -1,0 +1,108 @@
+<div class="login-page">
+
+  <!-- Animated background orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Left panel - branding -->
+  <div class="left-panel fade-in-left">
+    <div class="left-content">
+      <div class="brand-mark">
+        <span class="material-icons">water_drop</span>
+      </div>
+      <h1 class="hero-title">AquaSmart</h1>
+      <p class="hero-sub">The intelligent platform for managing water consumption and billing in modern apartment societies.</p>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon"><span class="material-icons">sensors</span></div>
+          <div>
+            <div class="feature-name">IoT Meter Tracking</div>
+            <div class="feature-desc">Real-time consumption from smart meters</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><span class="material-icons">calculate</span></div>
+          <div>
+            <div class="feature-name">Slab-Based Billing</div>
+            <div class="feature-desc">Automatic tiered pricing calculation</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><span class="material-icons">bar_chart</span></div>
+          <div>
+            <div class="feature-name">Usage Analytics</div>
+            <div class="feature-desc">Visual insights and consumption trends</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-credentials">
+        <p class="demo-label">DEMO CREDENTIALS</p>
+        <div class="cred-row">
+          <span class="cred-role admin-role">Admin</span>
+          <span class="cred-val">admin@example.com / password</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-role resident-role">Resident</span>
+          <span class="cred-val">john@example.com / password</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right panel - form -->
+  <div class="right-panel fade-in">
+    <div class="login-card">
+      <div class="card-top-accent"></div>
+
+      <div class="login-header">
+        <h2 class="login-title">Welcome back</h2>
+        <p class="login-subtitle">Sign in to your AquaSmart account</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="admin@example.com">
+          <mat-icon matPrefix class="field-icon">email</mat-icon>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" placeholder="••••••••">
+          <mat-icon matPrefix class="field-icon">lock</mat-icon>
+          <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+
+        <div *ngIf="error()" class="error-banner">
+          <mat-icon>error_outline</mat-icon>
+          <span>{{ error() }}</span>
+        </div>
+
+        <div class="loading-bar-wrap" *ngIf="loading()">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+
+        <button mat-flat-button class="submit-btn full-width" type="submit" [disabled]="loading() || loginForm.invalid">
+          <span *ngIf="!loading()">
+            <span class="material-icons btn-icon">login</span>
+            Sign In Securely
+          </span>
+          <span *ngIf="loading()">Authenticating…</span>
+        </button>
+      </form>
+
+      <div class="footer-links">
+        <p>Don't have an account? <a routerLink="/register" class="register-link">Create Account</a></p>
+      </div>
+    </div>
+  </div>
+
+</div>
