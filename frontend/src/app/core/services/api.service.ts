@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = 'https://water-billing-system-1-tk34.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
