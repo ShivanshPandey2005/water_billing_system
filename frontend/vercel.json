@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/frontend/browser",
+  "outputDirectory": "dist/browser",
   "framework": null,
   "rewrites": [
     {
